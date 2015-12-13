@@ -1,0 +1,19 @@
+{
+  "decomm":{
+    "chef": {
+      "server_url": "https://chef.server.url/organizations/cheforg",
+      "client_name": "sensu",
+      "client_key": "/etc/sensu/conf.d/sensu.pem"
+    },
+    "aws": {
+      "access_key": "******************",
+      "secret_key": "**************************************",
+      "region": "us-east-1"
+    },
+    "slack": {
+      "webhook_url": "https://hooks.slack.com/services/HHHHHHHHH/BBBBBBBBBBB/BBBBBBBBBBBvvvvVVVVV",
+      "channel": "#aws-notifications",
+      "username": "Sensu-Decomission-Agent"
+    }
+  }
+}

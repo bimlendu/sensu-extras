@@ -1,0 +1,16 @@
+{
+  "checks": {
+    "check-autoscaling": {
+      "handlers": [ "logevent", "cachethq" ],
+      "command": "/etc/sensu/plugins/cachethq/aws.py --service autoscaling --region us-east-1",
+      "interval": 300,
+      "cachethq" : {
+        "component": {
+          "name": "Auto Scaling (N. Virginia)",
+          "id": "15"
+        }
+      },
+      "subscribers": [ "cachethq-ops" ]
+    }
+  }
+}

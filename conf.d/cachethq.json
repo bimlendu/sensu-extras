@@ -1,0 +1,6 @@
+{
+  "cachethq": {
+    "api_url": "http://cachethq.server.url/api",
+    "api_token": "*****************"
+  }
+}

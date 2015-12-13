@@ -1,0 +1,10 @@
+{
+  "checks": {
+    "restart_chef_client": {
+      "command": "sudo service chef-client restart",
+      "subscribers": [],
+      "handlers": ["default"],
+      "publish": false
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "handlers": {
+    "default":{
+      "type": "set",
+      "handlers": ["slack-non-critical"]
+    },
+    "critical": {
+      "type": "set",
+      "handlers": ["pagerduty", "slack-critical"]
+    },
+    "pagerduty":{
+      "type": "pipe",
+      "command": "/etc/sensu/handlers/pagerduty.rb",
+      "severities": ["critical"],
+      "filter": "production"
+    },
+    "slack-critical": {
+      "type": "pipe",
+      "command": "/etc/sensu/handlers/slack.rb --json slack-critical",
+      "severities": ["critical"],
+      "filter": "production"
+    },
+    "slack-non-critical": {
+      "type": "pipe",
+      "command": "/etc/sensu/handlers/slack.rb --json slack-non-critical",
+      "severities": ["critical", "warning", "unknown"]
+    },
+    "logevent": {
+      "type": "pipe",
+      "command": "/etc/sensu/handlers/logevent.rb"
+    },
+    "cachethq": {
+      "type": "pipe",
+      "command": "/etc/sensu/handlers/cachethq.rb"
+    },
+    "remediator": {
+      "type": "pipe",
+      "command": "/etc/sensu/handlers/remediator.rb"
+    },
+    "decomm": {
+      "type": "pipe",
+      "command": "/etc/sensu/handlers/decomm.rb",
+      "severities": ["critical"]
+    }
+  }
+}
